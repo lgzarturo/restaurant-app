@@ -14,7 +14,14 @@ const useStyles = makeStyles({
   },
 });
 
-export const SimpleCard = () => {
+interface Props {
+  title: string
+  description: string
+  image: string
+  handleButton: () => void
+}
+
+export const SimpleCard = ({title, description, image, handleButton}: Props) => {
   const classes = useStyles();
 
   return (
@@ -22,22 +29,22 @@ export const SimpleCard = () => {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Restaurant image"
+          alt={description}
           height="180"
-          image="https://cdn.pixabay.com/photo/2017/08/03/21/48/drinks-2578446_1280.jpg"
-          title="Restaurant image"
+          image={image}
+          title={title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Restaurant
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={handleButton}>
           Access
         </Button>
       </CardActions>
