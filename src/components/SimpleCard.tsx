@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -19,9 +20,10 @@ interface Props {
   description: string
   image: string
   handleButton: () => void
+  to: any
 }
 
-export const SimpleCard = ({title, description, image, handleButton}: Props) => {
+export const SimpleCard = ({title, description, image, handleButton, to}: Props) => {
   const classes = useStyles();
 
   return (
@@ -44,9 +46,11 @@ export const SimpleCard = ({title, description, image, handleButton}: Props) => 
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={handleButton}>
-          Access
-        </Button>
+        <Link to={to}>
+          <Button size="small" color="primary" onClick={handleButton}>
+            Access
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

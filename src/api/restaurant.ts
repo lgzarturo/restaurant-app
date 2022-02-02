@@ -6,3 +6,9 @@ export const getRestaurants = async () => {
   const response = await axios.get(`${url}/restaurants`)
   return response.data
 }
+
+
+export const getRestaurant = async (id: number) => {
+  const response = await axios.get(`${url}/restaurants/${id}`)
+  return response.data
+}

@@ -1,7 +1,7 @@
 import { Container, Grid } from '@material-ui/core'
 import { useEffect, useState } from 'react'
 import { getRestaurants } from '../api/restaurant'
-import {SimpleCard, HandleStatus} from '../components'
+import { SimpleCard, HandleStatus } from '../components'
 import { RestaurantStateModel } from '../models/restaurantModel'
 
 function Home() {
@@ -29,7 +29,9 @@ function Home() {
                 title={restaurant.name}
                 description={restaurant.address}
                 image={restaurant.image}
-                handleButton={() => console.log('test')} />
+                handleButton={() => console.log('test')}
+                to={`/detail/${restaurant.id}`}
+              />
             </Grid>
           ))}
         </Grid>
