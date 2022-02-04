@@ -1,8 +1,10 @@
+import { Container, Grid } from "@material-ui/core"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getRestaurant } from "../api/restaurant"
-import { HandleStatus } from "../components"
+import { HandleStatus, DetailCard } from "../components"
 import { RestaurantDetailModel, RestaurantDetailStateModel } from "../models/restaurantDetailModel"
+import { Form } from "./Form"
 
 const initDetailObject: RestaurantDetailModel = {
   id: 0,
@@ -38,18 +40,23 @@ const Detail = () => {
 
   return (
     <HandleStatus status={restaurant.status}>
-      <div>
-        <h1>Detail</h1>
-        <p>
-          {name}, {description}, {address}, {image}
-        </p>
-        <ul>
-          {turns.map((turn, index) => (
-            <li key={index}>
-              {turn.name}
-            </li>
-          ))}
-        </ul>
+      <div style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', height: '100vh' }}>
+        <Container maxWidth="lg" style={{ paddingTop: '5vh' }}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={5}>
+              <DetailCard
+                title={name}
+                description={description}
+                subDescription={address}
+                image={image}
+                turns={turns}
+              />
+            </Grid>
+            <Grid item xs={12} sm={7}>
+              <Form  />
+            </Grid>
+          </Grid>
+        </Container>
       </div>
     </HandleStatus>
   )
