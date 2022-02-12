@@ -53,7 +53,7 @@ const Detail = () => {
               />
             </Grid>
             <Grid item xs={12} sm={7}>
-              <Form  />
+              <Form turns={turns} />
             </Grid>
           </Grid>
         </Container>
