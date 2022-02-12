@@ -40,8 +40,8 @@ const Detail = () => {
 
   return (
     <HandleStatus status={restaurant.status}>
-      <div style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', height: '100vh' }}>
-        <Container maxWidth="lg" style={{ paddingTop: '5vh' }}>
+      <div style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', height: 'calc(100vh - 4em)' }}>
+        <Container maxWidth="lg" style={{ paddingTop: '4vh' }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={5}>
               <DetailCard

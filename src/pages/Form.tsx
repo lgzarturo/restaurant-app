@@ -99,9 +99,9 @@ export const Form = ({ turns }: Props) => {
   }
 
   return (
-    <Paper style={{ padding: "2em" }}>
+    <Paper style={{ padding: "1em" }}>
       <form className={classes.root} noValidate autoComplete="off">
-        <Typography variant="h5">Realiza tu reserva</Typography>
+        <Typography variant="h6">Realiza tu reserva</Typography>
         <TextField
           id="standard-basic"
           label="Name"
