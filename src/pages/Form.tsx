@@ -124,7 +124,7 @@ export const Form = ({ turns }: Props) => {
           onChange={e => setEditedReservation({ ...editedReservation, person: +e.target.value })}
           error={isInvalid.person}
         />
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid container justifyContent="space-around">
             <KeyboardDatePicker
               margin="normal"

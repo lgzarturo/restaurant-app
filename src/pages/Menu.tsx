@@ -38,7 +38,9 @@ export const Menu = () => {
           <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
             <Button color="inherit">Restaurants</Button>
           </Link>
-          <Button color="inherit">Cancelar reservación</Button>
+          <Link to="/cancel" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            <Button color="inherit">Cancelar reservación</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

@@ -19,3 +19,9 @@ export const createReservation = async (reservation: ReservationModel) => {
   const response = await axios.post(`${url}/reservations`, reservation)
   return response.data
 }
+
+
+export const cancelReservation = async (locator: string) => {
+  const response = await axios.delete(`${url}/reservations`, {params: {locator}})
+  return response.data
+}
